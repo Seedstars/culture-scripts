@@ -9,4 +9,4 @@ set -e
 ./node_modules/.bin/sass-lint -f junit --verbose > shippable/testresults/sasslint.xml
 
 # javascript tests
-./node_modules/.bin/istanbul cover --report cobertura --dir shippable/codecoverage node_modules/mocha/bin/_mocha -- --require tests/require --recursive --compilers js:babel/register --reporter mocha-junit-reporter --reporter-options mochaFile=shippable/testresults/mocha.xml tests/js/
+./node_modules/.bin/istanbul cover --report cobertura --dir shippable/codecoverage node_modules/mocha/bin/_mocha -- --require tests/require --recursive --compilers js:babel-core/register --reporter mocha-junit-reporter --reporter-options mochaFile=shippable/testresults/mocha.xml tests/js/
