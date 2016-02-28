@@ -7,3 +7,6 @@ prospector  --profile-path=. --profile=.prospector.yml --path=src --ignore-patte
 
 # python tests
 py.test --cov=src --cov-report=xml tests/
+
+# run bandit - A security linter from OpenStack Security
+bandit -r src
