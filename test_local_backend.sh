@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-py.test --cov=src --cov-report=html tests/python/
+py.test -n 8 --nomigrations --reuse-db --cov=src --cov-report=html tests/python/
