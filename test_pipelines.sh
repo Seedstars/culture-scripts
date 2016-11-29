@@ -5,7 +5,7 @@ BackendTests () {
 }
 
 FrontendTests () {
-    ./node_modules/.bin/istanbul cover --report cobertura --dir ci/codecoverage node_modules/mocha/bin/_mocha -- --require tests/require --recursive --compilers js:babel-core/register --reporter mocha-junit-reporter tests/js/
+    ./node_modules/.bin/istanbul cover --report cobertura --dir shippable/codecoverage node_modules/mocha/bin/_mocha -- --require tests/require --recursive --compilers js:babel-core/register --reporter mocha-junit-reporter tests/js/
 }
 
 BackendStaticValidation () {
