@@ -17,4 +17,4 @@ bandit -r src
 # [pytest]
 # norecursedirs = scripts node_modules py-requirements webpack .* {args}
 # DJANGO_SETTINGS_MODULE=yourprojectname.settings.ci
-# python_paths = src tests/python
+# python_paths = src tests
