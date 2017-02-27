@@ -12,7 +12,7 @@ URL=$6
 SLACK_URL=$7 # This should be a long URL like https://hooks.slack.com/services/AAAAA/BBBB/CCCC.
 
 if [ "$STATUS" = "pass" ]; then
-   curl -X POST --data-urlencode 'payload={"username": "happyshippy", "text": "PASSING '"$GROUP"'/'"$PROJECT"'/'"$BRANCH"' (Pipeline '"$PIPELINE_ID"'). --> '"$URL"'", "icon_emoji": ":sunglasses:"}' $SLACK_URL
+   curl -X POST --data-urlencode 'payload={"username": "happyshippy", "text": "PASSING '"$GROUP"'/'"$PROJECT"'/'"$BRANCH"' (Pipeline '"$PIPELINE_ID"'). --> '"$URL"'/pipelines/'"$PIPELINE_ID"'", "icon_emoji": ":sunglasses:"}' $SLACK_URL
 else
-   curl -X POST --data-urlencode 'payload={"username": "sadshippy", "text": "FAILING '"$GROUP"'/'"$PROJECT"'/'"$BRANCH"' (Pipeline '"$PIPELINE_ID"'). --> '"$URL"'", "icon_emoji": ":scream:"}' $SLACK_URL
+   curl -X POST --data-urlencode 'payload={"username": "sadshippy", "text": "FAILING '"$GROUP"'/'"$PROJECT"'/'"$BRANCH"' (Pipeline '"$PIPELINE_ID"'). --> '"$URL"'/pipelines/'"$PIPELINE_ID"'", "icon_emoji": ":scream:"}' $SLACK_URL
 fi
