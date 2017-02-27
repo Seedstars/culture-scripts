@@ -3,4 +3,4 @@
 set -e
 
 # javascript static analysis
-./node_modules/.bin/eslint -c .eslintrc -f junit js tests/js > shippable/testresults/eslint.xml
+./node_modules/.bin/eslint -c .eslintrc -f junit js tests/js 
