@@ -32,9 +32,9 @@ for file_name in js_files_list:
             output_file_write_buffer.write("msgid \"{}\"\n".format(locale_id))
             output_file_write_buffer.write("msgstr \"{}\"\n\n".format(locale_id))
             # Add to content string
-            po_content+= "#: {}\n".format(file_name)
-            po_content+= "msgid \"{}\"\n".format(locale_id)
-            po_content+= "msgstr \"{}\"\n\n".format(locale_id)
+            po_content += "#: {}\n".format(file_name)
+            po_content += "msgid \"{}\"\n".format(locale_id)
+            po_content += "msgstr \"{}\"\n\n".format(locale_id)
     file.close()
 
 output_file_write_buffer.close()
