@@ -13,4 +13,4 @@ bandit -r src
 prospector --profile-path=. --profile=.prospector.yml --path=src --ignore-patterns=static
 
 # python tests
-py.test -c pytest_ci.ini -W error::RuntimeWarning --cov=src
+py.test -c pytest_ci.ini -W error::RuntimeWarning --cov=src --cov-fail-under=$MINIMUM_COVERAGE
