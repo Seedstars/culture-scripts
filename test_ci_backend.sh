@@ -6,8 +6,10 @@ set -e
 black --skip-string-normalization --line-length 120 --check tests
 black --skip-string-normalization --line-length 120 --check src
 
-# run mypy for the configured modules
-cd src && mypy $MYPY_ENABLED_MODULES && cd ..
+# run mypy for the configured modules in the src directory
+cd src
+mypy $MYPY_ENABLED_MODULES
+cd ..
 
 # run bandit - A security linter from OpenStack Security
 bandit -r src
