@@ -4,6 +4,10 @@
 black --skip-string-normalization --line-length 120 --check tests
 black --skip-string-normalization --line-length 120 --check src
 
+# run isort for import structure checkup with black profile
+isort --atomic --profile black -c src
+isort --atomic --profile black -c tests
+
 # run python static validation
 prospector  --profile-path=. --profile=.prospector.yml --path=src --ignore-patterns=static
 
