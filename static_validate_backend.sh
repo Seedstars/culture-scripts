@@ -9,7 +9,15 @@ isort --atomic --profile black -c src
 isort --atomic --profile black -c tests
 
 # run python static validation
-prospector  --profile-path=. --profile=.prospector.yml --path=src --ignore-patterns=static
+prospector --profile-path=. --profile=.prospector.yml --path=src --ignore-patterns=static
 
 # run bandit - A security linter from OpenStack Security
 bandit -r src
+
+# run mypy
+cd src || exit
+mypy .
+cd ..
+
+# run semgrep
+semgrep --config .semgrep_rules.yml src

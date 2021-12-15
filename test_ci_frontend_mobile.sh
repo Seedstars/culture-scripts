@@ -2,9 +2,8 @@
 
 set -e
 
-# validate static analsys rules from semgrep
-semgrep --error --config=r/typescript  src/
-semgrep --error --config=r/javascript  src/
+# validate static analysis rules from semgrep
+semgrep --strict --error --config .semgrep_rules.yml src/
 
 # validate eslint
 ./node_modules/.bin/eslint -c .eslintrc.js  -f compact 'src/**/*.{tsx,ts}'
