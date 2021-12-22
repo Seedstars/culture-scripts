@@ -22,6 +22,7 @@ EXCLUDE_LIST: dict[str, list[str]] = {
         'python.requests.best-practice.use-raise-for-status.use-raise-for-status',
         # this rule has problems, but would be great if it would work
         'python.lang.correctness.common-mistakes.string-concat-in-list.string-concat-in-list',
+        'python.lang.best-practice.logging-error-without-handling.logging-error-without-handling',
     ],
     'javascript': [],
     'typescript': [
