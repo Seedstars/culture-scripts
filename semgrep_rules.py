@@ -27,6 +27,8 @@ EXCLUDE_LIST: dict[str, list[str]] = {
     'javascript': [],
     'typescript': [
         'typescript.react.security.audit.react-no-refs.react-no-refs',
+        'typescript.react.portability.i18next.i18next-key-format.i18next-key-format', #temporary 
+        'typescript.lang.best-practice.moment-deprecated.moment-deprecated' #temporary 
     ],
 }
 
