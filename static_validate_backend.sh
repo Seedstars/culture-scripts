@@ -8,16 +8,17 @@ black --skip-string-normalization --line-length 120 --check src
 isort --atomic --profile black -c src
 isort --atomic --profile black -c tests
 
+# change to src directory to run all the necessary scripts on the correct path
+cd src || exit
+
 # run python static validation
-prospector --profile-path=. --profile=.prospector.yml --path=src --ignore-patterns=static
+prospector  --profile=../.prospector.yml --path=. --ignore-patterns=static
 
 # run bandit - A security linter from OpenStack Security
-bandit -r src
+bandit -r .
 
 # run mypy
-cd src || exit
 mypy .
-cd ..
 
 # run semgrep
-semgrep --config .semgrep_rules.yml src
+semgrep --config ../.semgrep_rules.yml .
