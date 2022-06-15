@@ -23,7 +23,7 @@ bandit -r .
 prospector  --profile=../.prospector.yml --path=. --ignore-patterns=static
 
 # run semgrep
-semgrep --strict --error --config ../.semgrep_rules.yml .
+semgrep --timeout 60 --strict --error --config ../.semgrep_rules.yml .
 
 # back to root of the project
 cd ..
