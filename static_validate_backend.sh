@@ -21,4 +21,4 @@ bandit -r .
 mypy .
 
 # run semgrep
-semgrep --config ../.semgrep_rules.yml .
+semgrep --timeout 60 --config ../.semgrep_rules.yml .
