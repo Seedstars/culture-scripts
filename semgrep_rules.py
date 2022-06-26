@@ -61,3 +61,4 @@ if __name__ in '__main__':
     parser.add_argument('-r', '--rules', choices=['python', 'javascript', 'typescript'], nargs='+', required=True)
     args = parser.parse_args()
     get_rules(args.rules)
+# 

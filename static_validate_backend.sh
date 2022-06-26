@@ -9,7 +9,10 @@ isort --atomic --profile black -c src
 isort --atomic --profile black -c tests
 
 # change to src directory to run all the necessary scripts on the correct path
-cd src || exit
+cd src || exit 1
+
+# run django migrations check to ensure that there are no migrations left to create
+python manage.py makemigrations --check --dry-run
 
 # run python static validation
 prospector  --profile=../.prospector.yml --path=. --ignore-patterns=static
