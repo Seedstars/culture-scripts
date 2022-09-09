@@ -23,6 +23,7 @@ EXCLUDE_LIST: dict[str, list[str]] = {
         # this rule has problems, but would be great if it would work
         'python.lang.correctness.common-mistakes.string-concat-in-list.string-concat-in-list',
         'python.lang.best-practice.logging-error-without-handling.logging-error-without-handling',
+        'python.lang.security.use-defusedcsv.use-defusedcsv',
     ],
     'javascript': [],
     'typescript': [
