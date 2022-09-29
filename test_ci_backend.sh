@@ -22,11 +22,11 @@ mypy .
 # run bandit - A security linter from OpenStack Security
 bandit -r .
 
-# python static analysis
-prospector  --profile=../.prospector.yml --path=. --ignore-patterns=static
-
 # run semgrep
 semgrep --timeout 60 --strict --error --config ../.semgrep_rules.yml .
+
+# python static analysis
+prospector  --profile=../.prospector.yml --path=. --ignore-patterns=static
 
 # back to root of the project
 cd ..
