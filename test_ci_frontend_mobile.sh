@@ -10,3 +10,6 @@ semgrep --strict --error --config .semgrep_rules.yml src/
 
 # finally valitate prettier format
 ./node_modules/.bin/prettier --config .prettierrc.js --check 'src/**/*.{tsx,ts}'
+
+# validate ts typing 
+./node_modules/.bin/tsc --noEmit --project tsconfig.json
