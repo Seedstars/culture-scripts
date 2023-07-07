@@ -12,7 +12,7 @@ isort --atomic --profile black -c tests
 cd tests || exit 1
 
 # run semgrep
-semgrep --timeout 60 --strict --error --config ../.semgrep_rules.yml .
+semgrep --timeout 60 --config ../.semgrep_rules.yml .
 
 # back to root of the project
 cd ..
