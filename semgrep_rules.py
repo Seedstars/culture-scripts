@@ -24,6 +24,10 @@ EXCLUDE_LIST: dict[str, list[str]] = {
         'python.lang.correctness.common-mistakes.string-concat-in-list.string-concat-in-list',
         'python.lang.best-practice.logging-error-without-handling.logging-error-without-handling',
         'python.lang.security.use-defusedcsv.use-defusedcsv',
+        # replaced with internal rule that was extended
+        'python.django.performance.access-foreign-keys.access-foreign-keys',
+        'python.lang.best-practice.unspecified-open-encoding.unspecified-open-encoding',
+        'python.django.security.audit.unvalidated-password.unvalidated-password'
     ],
     'javascript': [],
     'typescript': [
