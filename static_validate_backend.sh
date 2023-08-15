@@ -8,14 +8,8 @@ black --skip-string-normalization --line-length 120 --check src
 isort --atomic --profile black -c src
 isort --atomic --profile black -c tests
 
-# change to test directory to run all the necessary scripts on the correct path
-cd tests || exit 1
-
 # run semgrep
-semgrep --timeout 60 --config ../.semgrep_rules.yml .
-
-# back to root of the project
-cd ..
+semgrep --timeout 60 --config .semgrep_rules.yml tests src  
 
 # change to src directory to run all the necessary scripts on the correct path
 cd src || exit 1
@@ -31,6 +25,3 @@ bandit -r .
 
 # run mypy
 mypy .
-
-# run semgrep
-semgrep --timeout 60 --config ../.semgrep_rules.yml .
