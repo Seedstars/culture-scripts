@@ -5,8 +5,11 @@ set -e
 # validate static analysis rules from semgrep
 semgrep --strict --error --config .semgrep_rules.yml src/
 
-# javascript static analysis
-./node_modules/.bin/eslint -c .eslintrc -f junit src/static tests/js
+# validate eslint
+./node_modules/.bin/eslint -c eslint.config.mjs -f junit 'src/**/*.{tsx,ts}' |& tee report_eslint.xml
 
-# scss static analysis
-./node_modules/.bin/sass-lint -f junit --verbose --no-exit
+# validate prettier format
+./node_modules/.bin/prettier --config .prettierrc.js --check 'src/**/*.{tsx,ts}'
+
+# validate ts typing
+./node_modules/.bin/tsc --noEmit --project tsconfig.json | npx typescript-xunit-xml | tee report_typescript.xml
