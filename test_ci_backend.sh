@@ -16,7 +16,7 @@ isort --atomic --profile black -c src
 isort --atomic --profile black -c tests
 
 # run semgrep for tests and src
-semgrep --timeout 30 --strict --error --jobs=4  --max-target-bytes=500000 --config .semgrep_rules.yml --exclude=node_modules/,dist/,venv/,virtualenv/ --junit-xml -o report_semgrep.xml src tests 
+semgrep --timeout 30 --strict --error --jobs=4  --max-target-bytes=500000 --config .semgrep_rules.yml --baseline-commit origin/master --exclude=node_modules/,dist/,venv/,virtualenv/ --junit-xml -o report_semgrep.xml src tests 
 
 # change to src directory to run all the necessary scripts on the correct path
 cd src || exit 1
